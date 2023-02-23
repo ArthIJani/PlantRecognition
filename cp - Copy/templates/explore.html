@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}CreatePost{% endblock %}
+
+<!-- blog/templates/create_post.html -->
+{% block content %}
+  <div class="w-1/2 mx-auto mt-10">
+    <h1 class="text-2xl font-bold mb-5" style="text-align: center;">Create Blog Post</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="mb-5">
+        <label class="block font-bold mb-2" for="title">Title</label>
+        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="title" type="text" name="title">
+      </div>
+      <div class="mb-5">
+        <label class="block font-bold mb-2">Image</label>
+        <input class="bg-gray-200 appearance-none border border-gray-200 w-full p-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" type="file" name="image">
+      </div>
+
+      <div class="mb-5">
+        <label class="block font-bold mb-2" for="content">Content</label>
+        <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500 h-32" id="content" name="content"></textarea>
+      </div>
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
+    </form>
+  </div>
+{% endblock %}
+
+
+

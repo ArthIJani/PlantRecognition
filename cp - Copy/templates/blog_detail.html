@@ -1,0 +1,16 @@
+<!-- blog/templates/blog_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  <div class="container mx-auto">
+    <h3 class="text-xl font-medium">{{ post.title }}</h3>
+    <p class="text-gray-600">by {{ post.author.username }} on {{ post.date_created }}</p>
+    {% if post.image %}
+    <img src="{{ MEDIA_URL }}{{ post.image }}" alt="{{ post.title }} image">
+    {% endif %}
+    <p class="my-5">{{ post.content|linebreaks }}</p>
+</div>
+
+{% endblock %}
+
